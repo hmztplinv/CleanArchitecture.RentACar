@@ -15,4 +15,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CleanArchitecture.RentACar.Application\CleanArchitecture.RentACar.Application.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -6,4 +6,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="CleanArchitecture.CorePackages.Persistance">
+      <HintPath>..\..\..\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages.Persistance\bin\Debug\net7.0\CleanArchitecture.CorePackages.Persistance.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
