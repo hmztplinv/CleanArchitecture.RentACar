@@ -11,3 +11,4 @@ public class CreateBrandCommandHandler : IRequestHandler<CreateBrandCommandReque
         return null;
     }
 }
+

@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CleanArchitecture.RentACar.Application\CleanArchitecture.RentACar.Application.csproj" />
+    <ProjectReference Include="..\CleanArchitecture.RentACar.Persistance\CleanArchitecture.RentACar.Persistance.csproj" />
   </ItemGroup>
 
 </Project>
