@@ -20,4 +20,12 @@ public class BrandsController:BaseController
         GetListResponse<GetListBrandListItemDto> response=await Mediator.Send(queryRequest);
         return Ok(response);
     }
+
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById([FromRoute] Guid id)
+    {
+        GetByIdBrandQueryRequest queryRequest=new() {Id = id};
+        GetByIdBrandQueryResponse response=await Mediator.Send(queryRequest);
+        return Ok(response);
+    }
 }
