@@ -28,4 +28,18 @@ public class BrandsController:BaseController
         GetByIdBrandQueryResponse response=await Mediator.Send(queryRequest);
         return Ok(response);
     }
+
+    [HttpPut]
+    public async Task<IActionResult> Update([FromBody] UpdateBrandCommandRequest request)
+    {
+        UpdatedBrandCommandResponse response=await Mediator.Send(request);
+        return Ok(response);
+    }
+
+    [HttpDelete("{id}")]
+    public async Task<IActionResult> Delete([FromRoute] Guid id)
+    {
+        DeletedBrandCommandResponse response=await Mediator.Send(new DeleteBrandCommandRequest {Id = id});
+        return Ok(response);
+    }
 }
