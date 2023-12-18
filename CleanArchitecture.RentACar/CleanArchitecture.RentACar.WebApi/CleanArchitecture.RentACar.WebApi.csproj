@@ -20,4 +20,10 @@
     <ProjectReference Include="..\CleanArchitecture.RentACar.Persistance\CleanArchitecture.RentACar.Persistance.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="CleanArchitecture.CorePackages.Application">
+      <HintPath>..\..\..\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages.Application\bin\Debug\net7.0\CleanArchitecture.CorePackages.Application.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

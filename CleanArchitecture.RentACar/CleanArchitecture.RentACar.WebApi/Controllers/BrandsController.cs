@@ -7,9 +7,17 @@ public class BrandsController:BaseController
 {
 
     [HttpPost]
-    public async Task<IActionResult> Create(CreateBrandCommandRequest request)
+    public async Task<IActionResult> Add(CreateBrandCommandRequest request)
     {
         CreatedBrandCommandResponse response=await Mediator.Send(request);
+        return Ok(response);
+    }
+
+    [HttpGet]
+    public async Task<IActionResult> GetList([FromQuery] PageRequest request)
+    {
+        GetListBrandQueryRequest queryRequest=new() {PageRequest = request};
+        GetListResponse<GetListBrandListItemDto> response=await Mediator.Send(queryRequest);
         return Ok(response);
     }
 }

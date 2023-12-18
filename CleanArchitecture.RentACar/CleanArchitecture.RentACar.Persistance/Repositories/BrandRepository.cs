@@ -5,6 +5,6 @@ public class BrandRepository : EfRepositoryBase<BaseDbContext, Brand, Guid>, IBr
 {
     public BrandRepository(BaseDbContext context) : base(context)
     {
-     
+
     }
 }

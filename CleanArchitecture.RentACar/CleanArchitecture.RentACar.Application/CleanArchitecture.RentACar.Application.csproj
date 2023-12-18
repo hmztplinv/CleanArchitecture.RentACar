@@ -7,7 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="MediatR" Version="12.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.9" />
   </ItemGroup>
 
   <ItemGroup>
@@ -15,6 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="CleanArchitecture.CorePackages.Application">
+      <HintPath>..\..\..\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages.Application\bin\Debug\net7.0\CleanArchitecture.CorePackages.Application.dll</HintPath>
+    </Reference>
     <Reference Include="CleanArchitecture.CorePackages.Persistance">
       <HintPath>..\..\..\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages.Persistance\bin\Debug\net7.0\CleanArchitecture.CorePackages.Persistance.dll</HintPath>
     </Reference>
