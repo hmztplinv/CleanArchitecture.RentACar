@@ -9,15 +9,18 @@ public class BrandsController:BaseController
     [HttpPost]
     public async Task<IActionResult> Add(CreateBrandCommandRequest request)
     {
-        CreatedBrandCommandResponse response=await Mediator.Send(request);
+        CreatedBrandCommandResponse response=await Mediator.Send(request); 
+        //Mediator.Send(request) ile CreateBrandCommandRequest'i gönderiyoruz ve 
+        //Handle(CreateBrandCommandRequest request, CancellationToken cancellationToken) ile CreatedBrandCommandResponse dönüyor.
         return Ok(response);
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetList([FromQuery] PageRequest request)
+    public async Task<IActionResult> GetList([FromQuery] PageRequest request) 
     {
-        GetListBrandQueryRequest queryRequest=new() {PageRequest = request};
-        GetListResponse<GetListBrandListItemDto> response=await Mediator.Send(queryRequest);
+        GetListBrandQueryRequest queryRequest=new() {PageRequest = request}; // gelen isteği queryRequest'e atıyoruz.içinde PageRequest var.
+        GetListResponse<GetListBrandListItemDto> response=await Mediator.Send(queryRequest); // Mediator.Send ile queryRequest'i gönderiyoruz 
+        // ve Handle(GetListBrandQueryRequest request, CancellationToken cancellationToken) ile GetListResponse<GetListBrandListItemDto> dönüyor.
         return Ok(response);
     }
 

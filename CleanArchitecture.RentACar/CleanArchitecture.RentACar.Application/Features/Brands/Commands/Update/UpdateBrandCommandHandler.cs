@@ -14,11 +14,12 @@ public class UpdateBrandCommandHandler : IRequestHandler<UpdateBrandCommandReque
 
     public async Task<UpdatedBrandCommandResponse> Handle(UpdateBrandCommandRequest request, CancellationToken cancellationToken)
     {
+        // predicate ile request.Id ye göre brand getirilir.
         Brand? brand = await _brandRepository.GetAsync(predicate: b => b.Id == request.Id, cancellationToken: cancellationToken);
-
-        brand= _mapper.Map(request, brand);
-        await _brandRepository.UpdateAsync(brand);
-        UpdatedBrandCommandResponse response = _mapper.Map<UpdatedBrandCommandResponse>(brand);
+        // todo:validation
+        brand= _mapper.Map(request, brand); // request ten gelen bilgiler brand nesnesine map edilir.
+        await _brandRepository.UpdateAsync(brand); // brand nesnesi update edilir.
+        UpdatedBrandCommandResponse response = _mapper.Map<UpdatedBrandCommandResponse>(brand); // brand nesnesi UpdatedBrandCommandResponse nesnesine map edilir.
         return response;
     }
 }
