@@ -6,9 +6,14 @@ public static class PersistanceServiceRegistration
 {
     public static IServiceCollection AddPersistanceServices(this IServiceCollection services,  IConfiguration configuration)
     {
+        // InMemoryDatabase kullanmak için
+        // services.AddDbContext<BaseDbContext>(options =>
+        // {
+        //     options.UseInMemoryDatabase("RentACarDb");
+        // });
         services.AddDbContext<BaseDbContext>(options =>
         {
-            options.UseInMemoryDatabase("RentACarDb");
+            options.UseSqlServer(configuration.GetConnectionString("RentACarConnection"));
         });
         services.AddScoped<IBrandRepository, BrandRepository>();
         return services;
