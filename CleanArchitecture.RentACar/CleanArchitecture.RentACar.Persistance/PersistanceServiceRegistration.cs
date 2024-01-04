@@ -16,6 +16,7 @@ public static class PersistanceServiceRegistration
             options.UseSqlServer(configuration.GetConnectionString("RentACarConnection"));
         });
         services.AddScoped<IBrandRepository, BrandRepository>();
+        services.AddScoped<IModelRepository, ModelRepository>();
         return services;
     }
 }
