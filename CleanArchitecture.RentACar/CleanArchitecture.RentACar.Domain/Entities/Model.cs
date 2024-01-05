@@ -11,7 +11,7 @@ public class Model : Entity<Guid>
 
     public virtual Brand? Brand { get; set; } // modelim markası var
     public virtual Fuel? Fuel { get; set; } // modelim yakıtı var
-    public virtual Transmission? Transmission { get; set; } // modelim vitesi var
+    public virtual Transmission Transmission { get; set; } // modelim vitesi var
     public virtual ICollection<Car> Cars { get; set; } // modelin birden fazla araçları var
 
     public Model()

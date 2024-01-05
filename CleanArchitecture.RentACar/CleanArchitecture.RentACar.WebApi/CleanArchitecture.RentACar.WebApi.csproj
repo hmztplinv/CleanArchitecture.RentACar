@@ -13,6 +13,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="System.Linq.Dynamic.Core" Version="1.3.5" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +28,9 @@
   <ItemGroup>
     <Reference Include="CleanArchitecture.CorePackages.Application">
       <HintPath>..\..\..\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages.Application\bin\Debug\net7.0\CleanArchitecture.CorePackages.Application.dll</HintPath>
+    </Reference>
+    <Reference Include="CleanArchitecture.CorePackages.Persistance">
+      <HintPath>..\..\..\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages.Application\bin\Debug\net7.0\CleanArchitecture.CorePackages.Persistance.dll</HintPath>
     </Reference>
   </ItemGroup>
 
