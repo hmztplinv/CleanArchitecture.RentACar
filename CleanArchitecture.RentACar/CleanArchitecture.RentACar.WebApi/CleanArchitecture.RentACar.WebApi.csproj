@@ -29,6 +29,9 @@
     <Reference Include="CleanArchitecture.CorePackages.Application">
       <HintPath>..\..\..\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages.Application\bin\Debug\net7.0\CleanArchitecture.CorePackages.Application.dll</HintPath>
     </Reference>
+    <Reference Include="CleanArchitecture.CorePackages.CrossCuttingConcerns">
+      <HintPath>..\..\..\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages.CrossCuttingConcerns\bin\Debug\net7.0\CleanArchitecture.CorePackages.CrossCuttingConcerns.dll</HintPath>
+    </Reference>
     <Reference Include="CleanArchitecture.CorePackages.Persistance">
       <HintPath>..\..\..\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages.Application\bin\Debug\net7.0\CleanArchitecture.CorePackages.Persistance.dll</HintPath>
     </Reference>

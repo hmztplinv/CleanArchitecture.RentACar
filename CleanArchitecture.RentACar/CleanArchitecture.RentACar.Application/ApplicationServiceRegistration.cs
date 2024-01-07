@@ -10,6 +10,7 @@ public static class ApplicationServiceRegistration
         {
             configuration.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly());
         });
+        services.AddScoped<BrandBusinessRules>();
 
         return services;
     }
