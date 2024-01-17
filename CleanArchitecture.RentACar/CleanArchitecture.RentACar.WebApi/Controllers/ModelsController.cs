@@ -18,5 +18,6 @@ public class ModelsController : BaseController
         GetListByDynamicModelQueryRequest request = new () { PageRequest = pageRequest, DynamicQuery = dynamicQuery };
         GetListResponse<GetListByDynamicModelListItemDto> response = await Mediator.Send(request);
         return Ok(response);
+        // [FromBody] yanı body den gelen veriyi al demek. ve bu post olmalı çünkü body den veri alıyoruz.
     }
 }

@@ -7,7 +7,7 @@ public class Transmission : Entity<Guid>
 
     public Transmission()
     {
-        Models = new HashSet<Model>();
+        Models = new HashSet<Model>(); //neden hashset? cunku hashset tekrar eden degerleri almaz ve performans acisindan daha iyidir.
     }
 
     public Transmission(Guid id, string name):this()

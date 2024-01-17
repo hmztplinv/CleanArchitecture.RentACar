@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-public class BrandConfiguration : IEntityTypeConfiguration<Brand>
+public class BrandConfiguration : IEntityTypeConfiguration<Brand> // IEntityTypeConfiguration interface'ini implemente ederek Fluent API ile mapping işlemlerini gerçekleştiriyoruz.
 {
     public void Configure(EntityTypeBuilder<Brand> builder)
     {
@@ -13,7 +13,7 @@ public class BrandConfiguration : IEntityTypeConfiguration<Brand>
         builder.Property(b => b.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(b => b.DeletedDate).HasColumnName("DeletedDate");
 
-        builder.HasIndex(indexExpression: b => b.Name,name:"UK_Brands_Name").IsUnique(); // aynı isimde marka oluşturulamaz
+        builder.HasIndex(indexExpression: b => b.Name,name:"UK_Brands_Name").IsUnique(); // aynı isimde marka oluşturulamaz, db seviyesinde validasyon
         builder.HasMany(b => b.Models); // bir markanın birden fazla modeli olabilir
 
 

@@ -6,9 +6,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddApplicationServices();
+builder.Services.AddPersistanceServices(builder.Configuration);
+builder.Services.AddHttpContextAccessor();
+// builder.Services.AddDistributedMemoryCache(); // in memory cache
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = "localhost:6379";
+});
 
-
-builder.Services.AddPersistanceServices(builder.Configuration); // Remove the second argument
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -22,7 +27,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-if(app.Environment.IsProduction())
+// if(app.Environment.IsProduction())
 app.ConfigureCustomExceptionMiddleware();
 
 app.UseHttpsRedirection();

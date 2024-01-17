@@ -15,13 +15,13 @@ public class GetListModelQueryHandler : IRequestHandler<GetListModelQueryRequest
 
     public async Task<GetListResponse<GetListModelListItemDto>> Handle(GetListModelQueryRequest request, CancellationToken cancellationToken)
     {
-        Paginate<Model> models = await _modelRepository.GetListAsync(
-             include: m => m.Include(x => x.Brand).Include(x => x.Fuel).Include(x => x.Transmission),
-             index: request.PageRequest.PageNumber,
-             size: request.PageRequest.PageSize
+        Paginate<Model> models = await _modelRepository.GetListAsync( // IModelRepository'de tanımlı olan GetListAsync metodu çağrılıyor.
+             include: m => m.Include(x => x.Brand).Include(x => x.Fuel).Include(x => x.Transmission), //join ıle Brand,Fuel,Transmission tabloları alınıyor.
+             index: request.PageRequest.PageNumber, // sayfa numarası
+             size: request.PageRequest.PageSize // sayfa boyutu
          );
 
-        var response = _mapper.Map<GetListResponse<GetListModelListItemDto>>(models);
+        var response = _mapper.Map<GetListResponse<GetListModelListItemDto>>(models); // models nesnesi GetListResponse<GetListModelListItemDto> nesnesine dönüştürülüyor.
         return response;
     }
 }
