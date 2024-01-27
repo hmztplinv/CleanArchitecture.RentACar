@@ -27,6 +27,9 @@
     <Reference Include="CleanArchitecture.CorePackages.Persistance">
       <HintPath>..\..\..\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages.Persistance\bin\Debug\net7.0\CleanArchitecture.CorePackages.Persistance.dll</HintPath>
     </Reference>
+    <Reference Include="CleanArchitecture.CorePackages.Security">
+      <HintPath>..\..\..\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages\CleanArchitecture.CorePackages.Security\bin\Debug\net7.0\CleanArchitecture.CorePackages.Security.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

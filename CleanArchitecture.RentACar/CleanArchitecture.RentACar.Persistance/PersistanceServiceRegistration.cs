@@ -15,8 +15,17 @@ public static class PersistanceServiceRegistration
         {
             options.UseSqlServer(configuration.GetConnectionString("RentACarConnection"));
         });
+        
         services.AddScoped<IBrandRepository, BrandRepository>();
         services.AddScoped<IModelRepository, ModelRepository>();
+
+        services.AddScoped<IEmailAuthenticatorRepository, EmailAuthenticatorRepository>();
+        services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
+        services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
+        services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<OperationClaimRepository, OperationClaimRepository>();
+        services.AddScoped<OtpAuthenticatorRepository, OtpAuthenticatorRepository>();
+
         return services;
     }
 }
